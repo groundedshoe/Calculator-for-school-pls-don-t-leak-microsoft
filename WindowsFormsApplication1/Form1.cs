@@ -120,7 +120,7 @@ namespace WindowsFormsApplication1
         }
         void resolve() {//ser till att kalkyleringen händer.
             float a = 0;
-            if ((float.TryParse(LeftTerm + RightTerm, out a))){//bara ifall du på något sätt fick ∞66 som float.parse inte tillåter
+            if ((float.TryParse(LeftTerm.Replace(",","") + RightTerm.Replace(",",""), out a))){//bara ifall du på något sätt fick ∞66 som float.parse inte tillåter
                 a = default(float);
                 switch (MidTerm) {//kollar mitten termen
                     case "+":
